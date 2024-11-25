@@ -35,9 +35,11 @@ body { text-decoration: none; list-style: none; font-family: sans-serif;}
 
 .bg-color svg { z-index: 1; position: absolute; width: 99%; top: -270px;}
 
-.bg-color img { position: absolute;     top: 25%;
+.bg-color .top-fold-img{ position: absolute;     top: 25%;
     right: 20%;
     z-index: 2; width: 320px;}
+
+.bg-color .top-fold-svg{width: 90%;position: absolute;top: 70px;}
 
 /* section two */
 
@@ -104,8 +106,10 @@ body { text-decoration: none; list-style: none; font-family: sans-serif;}
     display: flex;
 
 }
+.svg-sec{
+    flex-grow: 1;}
 
-.svg-sec svg {
+.svg-sec img {
     width: 100%;
     height: 100%;
 }
@@ -119,8 +123,8 @@ body { text-decoration: none; list-style: none; font-family: sans-serif;}
 }
 
 .content {
-    padding-right: 100px;
-}
+        padding-right: 80px;
+    }
 
 .content h1 {
     color: #CCF381;
@@ -238,7 +242,7 @@ input::placeholder,textarea::placeholder {font-size: 14px;}
 /* section:- 5 */
 .prpl {background-color: #3D155F;padding: 50px 0;}
 
-.contacts {display: flex;padding-bottom: 120px;border-bottom: 1px solid #CCF381;}
+.contacts {display: flex;padding-bottom: 120px;border-bottom: 1px solid #CCF381;margin-top: 50px;}
 
 .toggle-parent {position: fixed; right: 5em; z-index: 10; background-color: #FFFFFF;box-shadow: 0 10px 53px 0 rgba(72, 49, 212, .4); border-radius: 4px;}
 
@@ -248,11 +252,9 @@ input::placeholder,textarea::placeholder {font-size: 14px;}
 
 .toggle::after {content: ""; position: absolute; width: 28px; height: 2px; right: 10px; top: 18px; border-radius: 2%; background-color: #4831D4;}
 
-.reach { margin-top: 70px; padding-right: 240px;}
+.reach { width: 60%;}
 
-.professional { margin-top: 120px;}
-
-.reach li, .professional li { list-style: none; font-size: 17px; line-height: 25px; letter-spacing: 2px; font-weight: 500; margin-bottom: 20px; color: #CCF381;}
+.reach li, .professional li,.caps { list-style: none; font-size: 17px; line-height: 25px; letter-spacing: 2px; font-weight: 500; margin-bottom: 20px; color: #CCF381;}
 
 .reach li a,.professional li a{    text-decoration: none; color: #CCF381;}
 
@@ -285,21 +287,24 @@ input::placeholder,textarea::placeholder {font-size: 14px;}
 .pop-up i { position: absolute; top: 20px; right: 30px; font-size: 20px; z-index: 4; cursor: pointer; }
 
 /* responsive design */
-
-@media (max-width:1050px){
-    .profile{margin-left: 20px;}
+@media(max-width:1050px){
     .profile h1{ font-size: 45px; }
     .discb{margin-left: 20px;}
 }
 
+@media (min-width:767px) and (max-width:1050px){
+    .about,.skill,.history,.foot-wrap{margin:0 20px;}
+}
+
 @media (max-width:767px) {
+    .bg-color .top-fold-svg{width: 44%; top: 44px;}
     .top-fold {flex-direction: column ;}
     .profile{margin-top: 30px; margin-left: 0;}
     .linear-grad {background: linear-gradient(to bottom, #4831D4 60%, #CCF381 40%)}
     .top-fold .about{background-color: #4831D4 ;}
     .top-fold .bg-color{background-color: #CCF381 ;}
     .bg-color{width: 100%;text-align: center;}
-    .bg-color img{position: relative; margin: 30px auto; height: 40%; width: 40%; top: auto; right: auto;}
+    .bg-color .top-fold-img{position: relative; margin: 30px auto; height: 40%; width: 40%; top: auto; right: auto;}
     .bg-color svg{width: 100%;height: 100%; top: 14%; right: 0;}
     .discb{margin-left: 0px;}
     .about{width: 100%; padding: 0px 70px;}
@@ -338,16 +343,21 @@ input::placeholder,textarea::placeholder {font-size: 14px;}
     .messg textarea{width: 100%; margin: 10px 0 0;padding-bottom: 20px;}
     .messg textarea::placeholder{font-size: 12px;}
     .mb{margin: 0;}
-    .submit{text-align: left;}
-    .reach{padding-right: 100px;}
+    .submit{text-align: left; margin-top: 30px;}
+    .reach{width: 100%;}
     .foot-wrap{padding: 0 70px;}
     }
-
     @media (max-width:570px){
         .toggle-parent{right: 3rem;}
         .contacts{ flex-direction: column;}
+        .reach li{overflow-wrap: break-word;}
     }
 
+    @media (min-width:767px){
+        .content {
+            max-width: 48%;
+        }
+    }
     @media (min-width:1281px){
         .container{
             max-width: 1200px;
